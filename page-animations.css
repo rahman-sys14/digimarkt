@@ -1,0 +1,394 @@
+/* Loading Screen Styles */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loader-content {
+    text-align: center;
+    color: white;
+}
+
+.loader-logo {
+    margin-bottom: 30px;
+    animation: logoPulse 2s ease-in-out infinite;
+}
+
+.loader-img {
+    width: 150px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.loader-spinner {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.spinner-ring {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    animation: spinnerBounce 1.4s ease-in-out infinite;
+}
+
+.spinner-ring:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.spinner-ring:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.spinner-ring:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes spinnerBounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.loader-text {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: textFade 2s ease-in-out infinite;
+}
+
+@keyframes textFade {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.loader-progress {
+    width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.loader-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #00d4ff, #5b9bd5, #00d4ff);
+    width: 0%;
+    transition: width 0.1s linear;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Page Animation Base Styles */
+body.page-animation-index,
+body.page-animation-home1,
+body.page-animation-price,
+body.page-animation-service,
+body.page-animation-dash,
+body.page-animation-contact,
+body.page-animation-login,
+body.page-animation-404 {
+    opacity: 0;
+}
+
+body.animate-in {
+    opacity: 1 !important;
+}
+
+/* Index Page Animation - Fade in from bottom */
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.page-animation-index.animate-in {
+    animation: fadeInFromBottom 0.8s ease-out forwards;
+}
+
+body.page-animation-index.animate-in nav {
+    animation: fadeInFromBottom 0.8s ease-out 0.1s forwards;
+    opacity: 0;
+}
+
+body.page-animation-index.animate-in section {
+    animation: fadeInFromBottom 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+body.page-animation-index.animate-in .hero-section {
+    animation-delay: 0.1s;
+}
+
+body.page-animation-index.animate-in .features-section {
+    animation-delay: 0.2s;
+}
+
+body.page-animation-index.animate-in .about-section {
+    animation-delay: 0.3s;
+}
+
+/* Home1 Page Animation - Slide in from right */
+body.page-animation-home1.animate-in {
+    animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+body.page-animation-home1.animate-in section {
+    animation: slideInFromRight 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+body.page-animation-home1.animate-in section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+body.page-animation-home1.animate-in section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+body.page-animation-home1.animate-in section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Price Page Animation - Zoom in */
+body.page-animation-price.animate-in {
+    animation: zoomIn 0.8s ease-out forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+body.page-animation-price.animate-in section,
+body.page-animation-price.animate-in .container {
+    animation: zoomIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+body.page-animation-price.animate-in section:nth-child(1),
+body.page-animation-price.animate-in .container:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+body.page-animation-price.animate-in section:nth-child(2),
+body.page-animation-price.animate-in .container:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Service Page Animation - Rotate and fade */
+body.page-animation-service.animate-in {
+    animation: rotateFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes rotateFadeIn {
+    from {
+        opacity: 0;
+        transform: rotate(-5deg) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+body.page-animation-service.animate-in section,
+body.page-animation-service.animate-in .container {
+    animation: rotateFadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+body.page-animation-service.animate-in section:nth-child(1),
+body.page-animation-service.animate-in .container:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+body.page-animation-service.animate-in section:nth-child(2),
+body.page-animation-service.animate-in .container:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Dash Page Animation - Scale up */
+body.page-animation-dash.animate-in {
+    animation: scaleUp 0.8s ease-out forwards;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+body.page-animation-dash.animate-in section,
+body.page-animation-dash.animate-in .dashboard-content {
+    animation: scaleUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+body.page-animation-dash.animate-in section:nth-child(1),
+body.page-animation-dash.animate-in .dashboard-content:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+/* Contact Page Animation - Slide up */
+body.page-animation-contact.animate-in {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.page-animation-contact.animate-in form,
+body.page-animation-contact.animate-in section {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+body.page-animation-contact.animate-in form,
+body.page-animation-contact.animate-in section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+body.page-animation-contact.animate-in section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Login Page Animation - Flip */
+body.page-animation-login.animate-in {
+    animation: flipIn 0.8s ease-out forwards;
+}
+
+@keyframes flipIn {
+    from {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0deg);
+    }
+}
+
+body.page-animation-login.animate-in .login-card,
+body.page-animation-login.animate-in .login-overlay {
+    animation: flipIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* 404 Page Animation - Bounce in */
+body.page-animation-404.animate-in {
+    animation: bounceIn 0.8s ease-out forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Ensure animations work on all elements */
+body.page-animation-index.animate-in *,
+body.page-animation-home1.animate-in *,
+body.page-animation-price.animate-in *,
+body.page-animation-service.animate-in *,
+body.page-animation-dash.animate-in *,
+body.page-animation-contact.animate-in *,
+body.page-animation-login.animate-in *,
+body.page-animation-404.animate-in * {
+    animation-fill-mode: both;
+}
+
+/* Prevent animation on loading screen */
+.page-loader,
+.page-loader * {
+    animation: none !important;
+}
+

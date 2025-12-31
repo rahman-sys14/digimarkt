@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly digital marketing</title>
+    <link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="page-animations.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-removebg-preview.png">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-removebg-preview.png" alt="Transport Logo" class="logo-img">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item home-dropdown">
+                    <a href="index.html" class="nav-link">Home ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="home1.html" class="dropdown-link">Home2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="price.html" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="service.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="dash.html" class="nav-link">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Login</a>
+                </li>
+            </ul>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+<!--section1-->
+<section class="dashboard-section">
+    <!-- Status Cards -->
+    <div class="status-cards">
+        <div class="card">
+            <h3>Total Visitors</h3>
+            <p>12,450 <i class="fas fa-users"></i></p>
+        </div>
+        <div class="card">
+            <h3>Active Campaigns</h3>
+            <p>24 <i class="fas fa-bullhorn"></i></p>
+        </div>
+        <div class="card">
+            <h3>Conversions</h3>
+            <p>1,320 <i class="fas fa-chart-line"></i></p>
+        </div>
+        <div class="card">
+            <h3>Revenue</h3>
+            <p>$48,900 <i class="fas fa-dollar-sign"></i></p>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+        <div class="chart-card">
+            <h3>Website Traffic</h3>
+            <canvas id="trafficChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <h3>Conversions</h3>
+            <canvas id="conversionChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Running Status / Progress Bars -->
+    <div class="progress-section">
+        <div class="progress-bar-container">
+            <div class="progress-label">
+                <span>SEO Optimization</span><span>85%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width:0%"></div>
+            </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-label">
+                <span>Social Media Growth</span><span>70%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width:0%"></div>
+            </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-label">
+                <span>Content Marketing</span><span>60%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width:0%"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Charts
+const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+const trafficChart = new Chart(trafficCtx, {
+    type: 'line',
+    data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [{
+            label: 'Visitors',
+            data: [1200, 1900, 1500, 2300, 2000, 2450],
+            backgroundColor: 'rgba(74,87,255,0.2)',
+            borderColor: '#4a57ff',
+            borderWidth: 2,
+            tension: 0.4,
+            fill: true
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+    }
+});
+
+const conversionCtx = document.getElementById('conversionChart').getContext('2d');
+const conversionChart = new Chart(conversionCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [{
+            label: 'Conversions',
+            data: [200, 300, 250, 400, 320, 450],
+            backgroundColor: '#4a57ff'
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+    }
+});
+
+// Animate progress bars
+window.addEventListener('load', () => {
+    const bars = document.querySelectorAll('.progress-bar-fill');
+    bars[0].style.width = '85%';
+    bars[1].style.width = '70%';
+    bars[2].style.width = '60%';
+});
+</script>
+<!-- section2-->
+<section class="activity-section">
+    <h2 class="section-title">Recent Activity</h2>
+
+    <div class="activity-cards">
+        <div class="activity-card">
+            <div class="activity-icon"><i class="fas fa-user-plus"></i></div>
+            <div class="activity-info">
+                <h3>New Lead</h3>
+                <p>John Doe signed up for consultation.</p>
+            </div>
+            <span class="activity-time">2h ago</span>
+        </div>
+
+        <div class="activity-card">
+            <div class="activity-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="activity-info">
+                <h3>Conversion</h3>
+                <p>Landing page conversion increased by 15%.</p>
+            </div>
+            <span class="activity-time">4h ago</span>
+        </div>
+
+        <div class="activity-card">
+            <div class="activity-icon"><i class="fas fa-envelope"></i></div>
+            <div class="activity-info">
+                <h3>Email Campaign</h3>
+                <p>Newsletter sent to 1,200 subscribers.</p>
+            </div>
+            <span class="activity-time">6h ago</span>
+        </div>
+    </div>
+</section>
+<script>
+// Example: Animate new activity cards (optional)
+const activityCards = document.querySelectorAll('.activity-card');
+
+activityCards.forEach((card, index) => {
+    setTimeout(() => {
+        card.style.opacity = 1;
+        card.style.transform = 'translateY(0)';
+    }, index * 200);
+});
+</script>
+<section class="metrics-section">
+    <h2 class="section-title">Top Metrics</h2>
+
+    <div class="metrics-cards">
+        <div class="metric-card">
+            <h3>SEO Score</h3>
+            <canvas id="seoChart"></canvas>
+        </div>
+
+        <div class="metric-card">
+            <h3>Social Engagement</h3>
+            <canvas id="socialChart"></canvas>
+        </div>
+
+        <div class="metric-card">
+            <h3>Email Campaign</h3>
+            <canvas id="emailChart"></canvas>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const seoCtx = document.getElementById('seoChart').getContext('2d');
+const seoChart = new Chart(seoCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Optimized', 'Pending'],
+        datasets: [{
+            data: [75, 25],
+            backgroundColor: ['#4a57ff', '#e5e7eb']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } }
+    }
+});
+
+const socialCtx = document.getElementById('socialChart').getContext('2d');
+const socialChart = new Chart(socialCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+        datasets: [{
+            label: 'Engagement',
+            data: [120, 150, 180, 140, 200, 160, 190],
+            backgroundColor: '#4a57ff'
+        }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } } }
+});
+
+const emailCtx = document.getElementById('emailChart').getContext('2d');
+const emailChart = new Chart(emailCtx, {
+    type: 'line',
+    data: {
+        labels: ['Week1','Week2','Week3','Week4'],
+        datasets: [{
+            label: 'Clicks',
+            data: [320, 400, 350, 500],
+            borderColor: '#4a57ff',
+            backgroundColor: 'rgba(74,87,255,0.2)',
+            fill: true,
+            tension: 0.4
+        }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } } }
+});
+</script>
+<footer class="site-footer">
+    <div class="footer-inner">
+
+        <!-- Brand Info -->
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo-link">
+                <img src="assets/logo-removebg-preview.png" alt="Agency Logo" class="footer-logo">
+            </a>
+
+            <p class="footer-text">
+                We help businesses grow through data-driven SEO, social media marketing, branding, and conversion-focused digital strategies. 
+                Whether you're building a brand or scaling globally — we’re here to make it happen.
+            </p>
+
+            <div class="footer-subscribe">
+    <p class="subscribe-label">🚀 Grow With Our Weekly Marketing Tips</p>
+
+    <form class="subscribe-form" onsubmit="return checkEmail()">
+        <input 
+            id="emailInput" 
+            type="email" 
+            placeholder="Enter your email address"
+            class="subscribe-input"
+            required
+        >
+
+        <button type="submit" class="subscribe-button">
+            Subscribe
+        </button>
+    </form>
+
+    <script>
+        function checkEmail() {
+            const email = document.getElementById("emailInput").value.trim();
+
+            if (email === "") {
+                alert("Please enter your email.");
+                return false; // stop form submit
+            }
+
+            // success redirect
+            window.location.href = "thanks.html";
+            return false; // prevent page reload
+        }
+    </script>
+
+    <p class="subscribe-hint">
+        No spam. Only high-value insights, case studies, and growth hacks.
+    </p>
+</div>
+
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-columns">
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="404.html">SEO Optimization</a></li>
+                    <li><a href="404.html">Social Media Marketing</a></li>
+                    <li><a href="404.html">Branding & Design</a></li>
+                    <li><a href="404.html">Google Ads & PPC</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="price.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="404.html">Marketing Blog</a></li>
+                    <li><a href="404.html">Case Studies</a></li>
+                    <li><a href="404.html">Guides & Tutorials</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+<!-- Footer Bottom -->
+    
+    <div class="footer-bottom">
+
+        <div class="footer-bottom-left">
+            <p>© 2025 Digital Edge Agency. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="404.html">Privacy Policy</a>
+                <span>•</span>
+                <a href="404.html">Terms & Conditions</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom-right">
+            <div class="social-icons">
+                <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon"></a>
+                <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon"></a>
+                <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon"></a>
+                <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="social-icon"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+<script src="page-transitions.js"></script>
+<script src="script.js"></script>
+</html>

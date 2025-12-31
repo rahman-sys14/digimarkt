@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly digital marketing</title>
+    <link rel="stylesheet" href="price.css">
+    <link rel="stylesheet" href="page-animations.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-removebg-preview.png">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-removebg-preview.png" alt="Transport Logo" class="logo-img">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item home-dropdown">
+                    <a href="index.html" class="nav-link">Home ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="home1.html" class="dropdown-link">Home2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="price.html" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="service.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="dash.html" class="nav-link">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Login</a>
+                </li>
+            </ul>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!--section1-->
+    <section class="pricing-hero">
+        <div class="pricing-hero-content">
+            <h1>Flexible Pricing Plans for Every Business</h1>
+            <p>Choose the plan that suits your digital marketing goals. Grow your business with SEO, social media, and
+                analytics tools.</p>
+            <div class="pricing-hero-buttons">
+                <a href="login.html" class="btn-primary">See Plans</a>
+                <a href="contact.html" class="btn-outline">Contact Sales</a>
+            </div>
+        </div>
+        <div class="pricing-hero-image">
+            <img src="assets/undraw_online-payments_d5ef.svg" alt="Pricing Illustration">
+
+        </div>
+    </section>
+
+    <!--section1-->
+    <section class="pricing-section">
+        <h2 class="section-title">Our Pricing Plans</h2>
+        <p class="section-subtitle">Choose a plan that fits your digital marketing needs</p>
+
+        <div class="pricing-cards">
+            <div class="pricing-card" data-plan="basic">
+                <h3>Basic</h3>
+                <p class="price">$49<span>/month</span></p>
+                <ul>
+                    <li>SEO Analysis</li>
+                    <li>5 Social Posts</li>
+                    <li>Email Support</li>
+                </ul>
+                <button class="btn-select" onclick="window.location.href='login.html'">
+                    Select Plan
+                </button>
+            </div>
+
+            <div class="pricing-card popular" data-plan="standard">
+                <h3>Standard</h3>
+                <p class="price">$99<span>/month</span></p>
+                <ul>
+                    <li>SEO Optimization</li>
+                    <li>10 Social Posts</li>
+                    <li>Priority Email Support</li>
+                </ul>
+                <button class="btn-select" onclick="window.location.href='login.html'">
+                    Select Plan
+                </button>
+
+            </div>
+
+            <div class="pricing-card" data-plan="premium">
+                <h3>Premium</h3>
+                <p class="price">$199<span>/month</span></p>
+                <ul>
+                    <li>Full SEO Suite</li>
+                    <li>Unlimited Social Posts</li>
+                    <li>Dedicated Manager</li>
+                </ul>
+                <button class="btn-select" onclick="window.location.href='login.html'">
+                    Select Plan
+                </button>
+            </div>
+        </div>
+    </section>
+    <!--section3-->
+
+    <section class="info-section">
+        <div class="info-container">
+            <div class="info-text">
+                <h2>Grow Your Business with Our Digital Marketing Solutions</h2>
+                <p>Our comprehensive SEO, social media, and analytics solutions are designed to help your business
+                    succeed online. We provide personalized strategies, data-driven results, and dedicated support for
+                    every client.</p>
+                <ul>
+                    <li>Increase organic traffic with expert SEO techniques</li>
+                    <li>Boost engagement with targeted social media campaigns</li>
+                    <li>Monitor and analyze your results with actionable insights</li>
+                    <li>Receive continuous support and consultation from our experts</li>
+                </ul>
+                <a href="contact.html" class="btn-primary">Get Started</a>
+            </div>
+            <div class="info-image">
+                <img src="assets/digi 1.avif" alt="Digital Marketing Illustration">
+            </div>
+        </div>
+    </section>
+    <!--section4-->
+<section class="cta-contact">
+    <div class="cta-content">
+        <h2>Ready to Grow Your Business?</h2>
+        <p>Sign up or contact us today to start scaling your brand with strategic marketing, analytics, and automation.</p>
+    </div>
+
+    <form class="contact-form" onsubmit="return submitContact(event)">
+        <div class="form-group">
+            <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+            <input type="text" id="phone" placeholder="Phone Number (Optional)">
+        </div>
+        <div class="form-group">
+            <textarea id="message" placeholder="Tell us about your project..." required></textarea>
+        </div>
+
+        <!-- FIXED: button now submits form -->
+        <button type="submit" class="cta-btn">Send Message</button>
+
+        <p id="form-response" class="response-message"></p>
+    </form>
+</section>
+
+
+    <script>
+    function submitContact(event) {
+        event.preventDefault(); // Stop default form behavior
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
+        let responseBox = document.getElementById("form-response");
+
+        // Validate required fields
+        if (name === "" || email === "" || message === "") {
+            responseBox.innerText = "Please fill all required fields.";
+            responseBox.style.color = "red";
+            return false;
+        }
+
+        // Success message
+        responseBox.innerText = "Thank you! Redirecting...";
+        responseBox.style.color = "green";
+
+        // Redirect to 404.html after 1 second
+        setTimeout(() => {
+            window.location.href = "404.html";
+        }, 1000);
+
+        return true;
+    }
+</script>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <!-- Brand Info -->
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="assets/logo-removebg-preview.png" alt="Agency Logo" class="footer-logo">
+                </a>
+
+                <p class="footer-text">
+                    We help businesses grow through data-driven SEO, social media marketing, branding, and
+                    conversion-focused digital strategies.
+                    Whether you're building a brand or scaling globally — we’re here to make it happen.
+                </p>
+
+                <div class="footer-subscribe">
+    <p class="subscribe-label">🚀 Grow With Our Weekly Marketing Tips</p>
+
+    <form class="subscribe-form" onsubmit="return checkEmail()">
+        <input 
+            id="emailInput" 
+            type="email" 
+            placeholder="Enter your email address"
+            class="subscribe-input"
+            required
+        >
+
+        <button type="submit" class="subscribe-button">
+            Subscribe
+        </button>
+    </form>
+
+    <script>
+        function checkEmail() {
+            const email = document.getElementById("emailInput").value.trim();
+
+            if (email === "") {
+                alert("Please enter your email.");
+                return false; // stop form submit
+            }
+
+            // success redirect
+            window.location.href = "thanks.html";
+            return false; // prevent page reload
+        }
+    </script>
+
+    <p class="subscribe-hint">
+        No spam. Only high-value insights, case studies, and growth hacks.
+    </p>
+</div>
+
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer-columns">
+
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="404.html">SEO Optimization</a></li>
+                        <li><a href="404.html">Social Media Marketing</a></li>
+                        <li><a href="404.html">Branding & Design</a></li>
+                        <li><a href="404.html">Google Ads & PPC</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="price.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="404.html">Marketing Blog</a></li>
+                        <li><a href="404.html">Case Studies</a></li>
+                        <li><a href="404.html">Guides & Tutorials</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- Bottom -->
+        <div class="footer-bottom">
+
+            <div class="footer-bottom-left">
+                <p>© 2025 Digital Edge Agency. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="404.html">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="404.html">Terms & Conditions</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom-right">
+                <div class="social-icons">
+                    <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                            class="social-icon"></a>
+                    <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                            class="social-icon"></a>
+                    <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                            class="social-icon"></a>
+                    <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                            class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="page-transitions.js"></script>
+<script src="script.js"></script>
+
+</html>

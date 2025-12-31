@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Digital Marketing</title>
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="page-animations.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-removebg-preview.png">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-removebg-preview.png" alt="Transport Logo" class="logo-img">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item home-dropdown">
+                    <a href="index.html" class="nav-link">Home ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="home1.html" class="dropdown-link">Home2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="price.html" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="service.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="dash.html" class="nav-link">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Login</a>
+                </li>
+            </ul>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ⭐ SECTION 1: HERO -->
+<section class="hero">
+    <div class="hero-left">
+        <h1>Grow Your Business With SEO & Digital Marketing</h1>
+        <p class="lead">Increase website traffic, generate more leads, and build your online presence with proven strategies.</p>
+        <a href="login.html">
+            <button class="btn">Get Free SEO Report</button>
+        </a>
+        
+    </div>
+
+    <div class="hero-right">
+        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149670.png" class="hero-img">
+    </div>
+</section>
+
+
+<!-- ⭐ SECTION 2: SEO SERVICES -->
+<section class="section">
+    <h2 class="section-title">Our SEO Services</h2>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Website SEO Audit</h3>
+            <p>Complete site analysis to detect SEO issues and improvement areas.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>On-Page Optimization</h3>
+            <p>Optimizing keywords, titles, descriptions, images, and content.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Technical SEO</h3>
+            <p>Improve speed, crawling, indexing, and core web vitals.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Local SEO</h3>
+            <p>Rank higher in nearby searches & Google Business Profile.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ⭐ SECTION 3: DIGITAL MARKETING SERVICES -->
+<section class="section">
+    <h2 class="section-title">Digital Marketing Services</h2>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Social Media Marketing</h3>
+            <p>Grow your brand on Instagram, Facebook, and more.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Google Ads (PPC)</h3>
+            <p>Instant website traffic & conversions through paid search.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Content Marketing</h3>
+            <p>Blogs, articles, and content that builds authority.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Branding & Creatives</h3>
+            <p>Logos, templates, posters & brand identity design.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ⭐ SECTION 4: WHY CHOOSE US -->
+<section class="section why-us">
+    <h2 class="section-title">Why Choose Us?</h2>
+
+    <div class="why-grid">
+        <div class="why-item">✔ 100% Transparent Work</div>
+        <div class="why-item">✔ Weekly Performance Report</div>
+        <div class="why-item">✔ Results-Driven Strategy</div>
+        <div class="why-item">✔ Affordable Pricing</div>
+    </div>
+</section>
+
+
+<!-- ⭐ SECTION 5: CONTACT / GET SEO REPORT -->
+<section class="section contact">
+    <h2 class="section-title">Get a Free SEO Report</h2>
+
+    <form id="seoForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="text" id="website" placeholder="Website URL" required>
+       <button type="button" class="btn" onclick="goToLogin()">Submit</button>
+         <script> function goToLogin() {
+                 window.location.href = "login.html";
+                }</script>
+        
+       
+        <p id="formMsg"></p>
+    </form>
+</section>
+<footer class="site-footer">
+    <div class="footer-inner">
+
+        <!-- Brand Info -->
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo-link">
+                <img src="assets/logo-removebg-preview.png" alt="Agency Logo" class="footer-logo">
+            </a>
+
+            <p class="footer-text">
+                We help businesses grow through data-driven SEO, social media marketing, branding, and conversion-focused digital strategies. 
+                Whether you're building a brand or scaling globally — we’re here to make it happen.
+            </p>
+
+            <div class="footer-subscribe">
+    <p class="subscribe-label">🚀 Grow With Our Weekly Marketing Tips</p>
+
+    <form class="subscribe-form" onsubmit="return checkEmail()">
+        <input 
+            id="emailInput" 
+            type="email" 
+            placeholder="Enter your email address"
+            class="subscribe-input"
+            required
+        >
+
+        <button type="submit" class="subscribe-button">
+            Subscribe
+        </button>
+    </form>
+
+    <script>
+        function checkEmail() {
+            const email = document.getElementById("emailInput").value.trim();
+
+            if (email === "") {
+                alert("Please enter your email.");
+                return false; // stop form submit
+            }
+
+            // success redirect
+            window.location.href = "thanks.html";
+            return false; // prevent page reload
+        }
+    </script>
+
+    <p class="subscribe-hint">
+        No spam. Only high-value insights, case studies, and growth hacks.
+    </p>
+</div>
+
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-columns">
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="404.html">SEO Optimization</a></li>
+                    <li><a href="404.html">Social Media Marketing</a></li>
+                    <li><a href="404.html">Branding & Design</a></li>
+                    <li><a href="404.html">Google Ads & PPC</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="price.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="404.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="404.html">Marketing Blog</a></li>
+                    <li><a href="404.html">Case Studies</a></li>
+                    <li><a href="404.html">Guides & Tutorials</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- Bottom -->
+    <div class="footer-bottom">
+
+        <div class="footer-bottom-left">
+            <p>© 2025 Digital Edge Agency. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="404.html">Privacy Policy</a>
+                <span>•</span>
+                <a href="404.html">Terms & Conditions</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom-right">
+            <div class="social-icons">
+                <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon"></a>
+                <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon"></a>
+                <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon"></a>
+                <a href="404.html" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="social-icon"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="page-transitions.js"></script>
+<script src="script.js"></script>
+</html>
